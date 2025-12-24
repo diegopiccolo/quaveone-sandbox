@@ -1,0 +1,47 @@
+---
+alwaysApply: true
+---
+# cursor.mdc
+
+## Objective
+Create a simple hello-world project, executable in Docker, ready for build and deploy via MCP for Quave Cloud.
+
+## General Rules
+- Keep the project as simple as possible
+- Do not add authentication, database, or unnecessary dependencies
+- Use only a basic static website
+- Code should be easy to understand and modify
+
+## Expected Structure
+- A single static website
+- A Dockerfile at the project root
+- An HTML file as the main entry point
+
+## Application
+- Must serve a static HTML page at route `/`
+- The HTML should display: "Docker for FinTech httpd zCloud example"
+- The application should use the static website server from the base image
+
+## Dockerfile
+- Must use `lipanski/docker-static-website:latest` as the base image
+- Must copy all files to the container (COPY . .)
+- The base image handles the web server and port configuration automatically
+
+## HTML Content
+- Must include proper HTML structure with head and body tags
+- Title should be: "Docker httpd by zCloud"
+- Body content should be: "Docker for FinTech httpd zCloud example"
+- Must include proper meta tags for charset, viewport, and compatibility
+
+## Execution
+- The container should start with a single command
+- No external configuration should be required
+- The project should work with:
+  - docker build
+  - docker run
+
+## Limitations
+- Do not use complex frameworks
+- Do not add extra logic
+- Do not create multiple containers
+- Do not include additional documentation
